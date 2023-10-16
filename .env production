@@ -1,6 +1,6 @@
 GOOGLE_CLIENT_ID=41745597058-hg7kjacq1j31n12t2eb2fd382abqgvu7.apps.googleusercontent.com
 GOOGLE_CLIENT_SECRET=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
 
-NEXTAUTH_URL= https://projeto-dev-react.vercel.app/
+NEXTAUTH_URL= https://projeto-dev-react.vercel.app
 
 NEXTAUTH_SECRET = FHUSFUDYFUIHENMNVÇ.VV2D57X21S247DSJSUDSNJYTUPPÇ.LNX
