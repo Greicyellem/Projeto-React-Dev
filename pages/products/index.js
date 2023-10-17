@@ -8,7 +8,9 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { fetchProducts } from '@/app/utils/api'
 import { CartContext } from '@/app/contexts/CartContext';
-import { ProductContainer, ProductImage, CardButton } from '@/app/styles/ProductsStyles'
+import { ProductContainer, ProductImage, CardButton, ProductsCont } from '@/app/styles/ProductsStyles'
+import '../../src/app/globals.css'
+
 
 const ProductsPage = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState();
@@ -36,26 +38,32 @@ const ProductsPage = () => {
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
-      <ul>
-        {products.map((product) =>(
-            <li key={product.id}>
-              <ProductContainer>
-                <ProductImage src={product.image} width={200} />
-                <p>{product.title}</p>
-                <p>{product.price}</p> 
-                <p>{product.description}</p>
-                <p>{product.category} </p>
-                <CardButton 
-                  onClick={() => addToCart(product)}
-                >
-                  Add cart
-                </CardButton>
+
+          <ul className='flex flex-wrap justify-around m-20 '>
+           {products.map((product) => (
+
+           <li key={product.id}>
+            <ProductsCont>
+            <ProductContainer>
+            <ProductImage src={product.image} width={50}></ProductImage>
+            <p>{product.title}</p>
+            <p>{product.price}</p>
+            <p>{product.category}</p>
+            <CardButton
+               onClick={() => addToCart(product)}
+              className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
+                Add cart</CardButton>
               </ProductContainer>
-            </li>
-        ))}
-      </ul>
+              </ProductsCont>
+           </li>
+
+          ))}
+
+          </ul>
+
       <Bottom></Bottom>
     </main>
+    
   );
 
 }

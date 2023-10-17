@@ -45,7 +45,7 @@ const Drawer = ({ isOpen, onClose }) => {
             <span className="sr-only">Close menu</span>
         </button>
         <div className="py-4 overflow-y-auto">
-            <ul className="space-y-2 font-medium">
+            <ul className="space-y-2 font-medium ">
 
                 <li>
                     <Link href={"/"}>
