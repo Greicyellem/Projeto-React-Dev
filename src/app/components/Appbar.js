@@ -1,5 +1,6 @@
 import React,{ useContext, useEffect} from "react";
 import { ThemeContext } from "@/app/contexts/ThemeContext"
+import { TbChristmasTree } from "react-icons/tb"
 
 function Appbar({onMenuToggle}) {
   const { theme } = useContext(ThemeContext);
@@ -15,7 +16,7 @@ function Appbar({onMenuToggle}) {
     `}>
       <div className={`
       ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-        Infnet e-commerce  
+        Christmas geek <TbChristmasTree> </TbChristmasTree>
       </div>
       <button onClick={onMenuToggle}>
         <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">

@@ -3,40 +3,26 @@ import styled from 'styled-components'
 export const ProductContainer = styled.div`
     padding: 16px;
     background-color: #f5f5f5;
+    border: 1px solid green;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 330px;
-    justify-content: center;
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    height: 350px;
-
-`;
-
-export const ProductsCont = styled.div`
-    align-items: center;
-    margin: 0 5px 10px;
-    border-radius: 22px;
-
 `;
 
 export const ProductImage = styled.img`
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 `;
 
 export const CardButton = styled.button`
-    background-color: yellowgreen;
-    color: black;
+    background-color: red;
+    color: white;
     border: none;
     padding: 8px 16px;
     cursor: pointer;
+    border-radius: 50px;
 
     &:hover{
-        background-color: greenyellow;
+        background-color: green;
     }
 `;
 

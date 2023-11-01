@@ -27,6 +27,7 @@ const CartPage = () => {
                 <p>{item.title}</p>
                 <p>Price: {item.price}</p>
                 <p>Quantity: {item.quantity}</p>
+                
                 <CardButton onClick={() => removeFromCart(item.id)}>Remove from Cart</CardButton>
               </ProductContainer>
             </li>

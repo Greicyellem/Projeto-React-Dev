@@ -18,7 +18,7 @@ const Drawer = ({ isOpen, onClose }) => {
         <input 
             type="checkbox"
             value=""
-            className="sr-only peer bg-red-500"
+            className="sr-only peer"
             onClick={toggleTheme}
             checked={theme === 'dark'}
         ></input>
@@ -45,7 +45,7 @@ const Drawer = ({ isOpen, onClose }) => {
             <span className="sr-only">Close menu</span>
         </button>
         <div className="py-4 overflow-y-auto">
-            <ul className="space-y-2 font-medium ">
+            <ul className="space-y-2 font-medium">
 
                 <li>
                     <Link href={"/"}>

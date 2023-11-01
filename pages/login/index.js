@@ -19,6 +19,7 @@ const LoginPage = () => {
 
   console.log(session);
 
+
   if (session) {
     return (
       <main className="min-h-screen">
@@ -29,6 +30,8 @@ const LoginPage = () => {
               {" "}
               Logado como: {session.user.name}, e-mail: {session.user.email} <br />
             </h2>
+
+          
               <button
                 className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
                 onClick={() => router.push("/profile/complete-profile")}
@@ -53,12 +56,17 @@ const LoginPage = () => {
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
       <h2> You are not signed in!!</h2>
         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-                onClick={() => signIn('google')}>
+                onClick={() => signIn()}>
           Sign in
         </button>
       <Bottom></Bottom>
     </main>
   );
+
+
+
+
+
 
 }
 export default LoginPage;

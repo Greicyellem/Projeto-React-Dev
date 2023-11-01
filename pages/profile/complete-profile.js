@@ -23,7 +23,7 @@ const CompleteProfile = () => {
 
         {session? (
             <div>
-                <h1>Formulário para completar o cadastro usando dados da sessão</h1>
+                <h1>Formulario para completar o cadastro usando dados da sessão</h1>
                 <CompleteProfileForm user={session.user}/>
             </div>
 

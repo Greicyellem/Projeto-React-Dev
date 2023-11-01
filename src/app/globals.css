@@ -25,17 +25,3 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-.pai-produtos {
-  width: 100%;
-  
-}
-
-.produtos {
-  width: 33%;
-  display: flex;
-  background-color: red;
-  flex-direction: column;
-  justify-content: space-between; 
-  margin-bottom: 2.5rem;
-}

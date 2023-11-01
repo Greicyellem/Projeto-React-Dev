@@ -5,6 +5,7 @@ function Bottom() {
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
+        console.log("Bottom atualizou");
     }, [theme])
 
     return (
