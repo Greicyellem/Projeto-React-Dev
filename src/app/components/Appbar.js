@@ -1,6 +1,7 @@
 import React,{ useContext, useEffect} from "react";
 import { ThemeContext } from "@/app/contexts/ThemeContext"
 import { TbChristmasTree } from "react-icons/tb"
+import Link from "next/link";
 
 function Appbar({onMenuToggle}) {
   const { theme } = useContext(ThemeContext);
@@ -11,17 +12,17 @@ function Appbar({onMenuToggle}) {
 
   return (
     <div className={`flex justify-between items-center p-4
-      ${theme === 'dark' ? 'bg-gray-800' : 'bg-gray-200'}
+      ${theme === 'dark' ? 'bg-emerald-800' : 'bg-dark-red'}
     
     `}>
-      <div className={`
-      ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-        Christmas geek <TbChristmasTree> </TbChristmasTree>
+      <Link href='/'>
+      <div className={`font-bold text-lg	 ${theme === 'dark' ? 'text-deep-gold' : 'text-deep-gold'}`}>
+         Christmas Store
       </div>
+      </Link>
       <button onClick={onMenuToggle}>
-        <svg className="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
+        <TbChristmasTree title='menu' className="w-8 h-8 text-deep-gold dark:deep-gold"> 
+      </TbChristmasTree>
       </button>
     </div>
   )

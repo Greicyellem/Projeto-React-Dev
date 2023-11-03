@@ -118,7 +118,7 @@ const CompleteProfileForm = ({ user }) => {
                     <ZoomSlider zoom={zoom} onZoomChange={handleZoomChange}></ZoomSlider>
                 
                     <div className="flex justify">
-                        <button type="submit" onClick={handleCancel} className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button type="submit" onClick={handleCancel} className="bg-dark-red hover:bg-dark-green text-white font-bold py-2 px-4 rounded">
                             Cancelar
                         </button>
                     </div>
@@ -127,7 +127,7 @@ const CompleteProfileForm = ({ user }) => {
             )}
 
             <div className="flex justify">
-                <button type="submit" onSubmit={onSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button type="submit" onSubmit={onSubmit} className="bg-dark-red hover:bg-dark-green text-white font-bold py-2 px-4 rounded">
                 Salvar
                 </button>
             </div>

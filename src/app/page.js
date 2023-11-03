@@ -4,7 +4,9 @@ import Bottom from './components/Bottom';
 import Drawer from './components/Drawer';
 import React, {useState, useEffect} from 'react';
 import { useRouter } from "next/navigation";
-import { searchProducts } from '@/app/utils/api'; // Importe a função searchProducts
+import { searchProducts } from '@/app/utils/api'; 
+import VideoCarousel from './components/VideoCarousel';
+import './globals.css'
 
 
 export default function Home() {
@@ -18,7 +20,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Função para buscar produtos com base no termo de pesquisa
     const search = async () => {
       const results = await searchProducts(searchTerm);
       setSearchResults(results);
@@ -28,31 +29,12 @@ export default function Home() {
   }, [searchTerm]);
 
   return (
-    <main className="min-h-screen">
+    <body>
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
-      <div className="w-full flex justify-center py-8">
-        <input
-          type="text"
-          placeholder="Buscar produtos..."
-          className="bg-gray-200 border border-gray-300 rounded-full p-2 w-80"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-      <div className="flex justify-center">
-        <ul>
-          {searchResults.map((product) => (
-            <li key={product.id} className="mb-4">
-              <div className="bg-white p-4 shadow-md">
-                <img src={product.image} alt={product.title} className="w-16 h-16 rounded-full" />
-                <p className="mt-2">{product.title}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <VideoCarousel></VideoCarousel>
       <Bottom></Bottom>
-    </main>
+      </body>
+
   )
 }

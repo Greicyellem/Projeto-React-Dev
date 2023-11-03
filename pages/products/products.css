@@ -1,0 +1,22 @@
+.ul-produtos{
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.lista-produtos{
+    padding: 15px;
+    border: 6px solid green;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: -webkit-center;
+}
+
+.produtos-todos{
+    text-align: -webkit-center;
+}
+
+.img-produtos {
+    border-radius: 10px;    
+    border: 5px solid red;
+
+}

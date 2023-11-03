@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { fetchProducts, deleteProduct } from '@/app/utils/api'
 import { CartContext } from '@/app/contexts/CartContext';
 import { ProductContainer, ProductImage, CardButton } from '@/app/styles/ProductsStyles'
+import '../products/products.css';
+
 
 const AdminPage = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState();
@@ -25,15 +27,12 @@ const AdminPage = () => {
   const [products, setProducts] = useState([]);
 
   const handleDeleteProduct = async (productId) => {
-    // Faça a chamada para excluir o produto
     const success = await deleteProduct(productId);
 
     if (success) {
-      // Atualize a lista de produtos após a exclusão
       const updatedProducts = products.filter((product) => product.id !== productId);
       setProducts(updatedProducts);
 
-      // Recarregue a página
       router.reload();
     }
   };
@@ -51,22 +50,23 @@ const AdminPage = () => {
     <main className="min-h-screen">
       <Appbar onMenuToggle={handleMenuToggle}></Appbar>
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
-      <ul>
+      <h1 className="text-2xl font-bold text-dark-green m-8">Alteração de Produtos</h1>
+      <ul className='ul-produtos'>
         {products.map((product) => (
-          <li key={product.id}>
+          <li className='lista-produtos' key={product.id}>
             <ProductContainer>
-              <ProductImage src={product.image} width={200} />
+              <ProductImage className='img-produtos' src={product.image} width={200} />
               <p>{product.title}</p>
               <p>{product.price}</p>
               <p>{product.description}</p>
               <p>{product.category}</p>
               <CardButton onClick={() => handleDeleteProduct(product.id)}>
-                Delete Product
+                Deletar produto
               </CardButton>
               <Link href={`/admin/products/edit/${product.id}`}>
-                <button className="bg-blue-500 hover-bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                  Edit
-                </button>
+               <CardButton>
+                  Editar produto
+                </CardButton>
               </Link>
             </ProductContainer>
           </li>

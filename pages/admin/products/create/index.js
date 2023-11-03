@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import { createProduct } from "@/app/utils/api";
+import Bottom from "@/app/components/Bottom";
 
 const CreateProduct = () => {
   const router = useRouter();
@@ -31,13 +32,13 @@ const CreateProduct = () => {
       <Drawer isOpen={isDrawerOpen} onClose={handleMenuToggle}></Drawer>
 
       <div className="flex items-center justify-center">
-        <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
-          <h1 className="text-2xl font-bold mb-4">Criar Produto</h1>
+        <div className="bg-white p-10 pb-20 mb-25 rounded shadow-lg w-full max-w-md">
+          <h1 className="text-2xl font-bold mb-4 text-dark-green">Criar Produto</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label
                 htmlFor="title"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-dark-green"
               >
                 Título
               </label>
@@ -49,7 +50,7 @@ const CreateProduct = () => {
             <div className="mb-4">
               <label
                 htmlFor="price"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-dark-green"
               >
                 Preço
               </label>
@@ -61,11 +62,11 @@ const CreateProduct = () => {
             <div className="mb-4">
               <label
                 htmlFor="description"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-dark-green"
               >
                 Descrição
               </label>
-              <textarea rows='5'
+              <textarea rows='3'
                 {...register("description")}
                 className="w-full border rounded py-2 px-3"
               />
@@ -73,7 +74,7 @@ const CreateProduct = () => {
             <div className="mb-4">
               <label
                 htmlFor="category"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-sm font-medium text-dark-green"
               >
                 Categoria
               </label>
@@ -84,19 +85,20 @@ const CreateProduct = () => {
             </div>
 
             <div className='mb-4'>
-                            <label htmlFor='image' className='block text-sm font-medium text-gray-600'>Link da imagem</label>
+                            <label htmlFor='image' className='block text-sm font-medium text-dark-green'>Link da imagem</label>
                             <input {...register('image')} className='w-full border rounded py-2 px-3'></input>
                         </div>
            
             <button
               type="submit"
-              className="bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-red-600"
+              className="bg-dark-red text-white font-semibold py-2 px-4 rounded hover:bg-dark-green"
             >
               Salvar
             </button>
           </form>
         </div>
       </div>
+      <Bottom></Bottom>
     </main>
   );
 };
