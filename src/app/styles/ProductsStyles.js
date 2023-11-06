@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ProductContainer = styled.div`
     padding: 16px;
     background-color: #f5f5f5;
-    border: 6px solid gold;
+    border: 6px solid red;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
